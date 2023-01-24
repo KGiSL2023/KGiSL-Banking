@@ -13,12 +13,20 @@ public class BankAccountTest {
 	@Test
 	public void bankdeposite() {
 
-//		bankAccountVO.setAccBalance(200);
 		bankAccountVO.setAccStatus(true);
-		bankAccountVO = bankAccount.depositAmount(bankAccountVO, 1000);
+		bankAccountVO = bankAccount.depositAmount(bankAccountVO, -1000);
 		assertEquals(1000, bankAccountVO.getAccBalance());
 		bankAccountVO = bankAccount.withdrawAmount(bankAccountVO, 100);
 		assertEquals(900, bankAccountVO.getAccBalance());
+	}
+	
+
+	@Test
+	public void negativeTest() {
+
+		bankAccountVO.setAccStatus(true);
+		bankAccountVO = bankAccount.depositAmount(bankAccountVO, -1000);
+		bankAccountVO = bankAccount.withdrawAmount(bankAccountVO, 100);
 	}
 
 	@BeforeTest

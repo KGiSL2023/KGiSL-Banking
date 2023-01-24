@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30" started-at="2023-01-24T10:36:20 IST" finished-at="2023-01-24T10:36:20 IST">
+  <suite name="Default suite" duration-ms="43" started-at="2023-01-24T10:53:32 IST" finished-at="2023-01-24T10:53:32 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="30" started-at="2023-01-24T10:36:20 IST" finished-at="2023-01-24T10:36:20 IST">
-      <class name="com.kgisl.bank.FixedDepositTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.kgisl.bank.FixedDepositTest@59e5ddf]" name="setUp" is-config="true" duration-ms="4" started-at="2023-01-24T10:36:20 IST" finished-at="2023-01-24T10:36:20 IST">
+    <test name="Default test" duration-ms="43" started-at="2023-01-24T10:53:32 IST" finished-at="2023-01-24T10:53:32 IST">
+      <class name="com.kgisl.bank.BankAccountTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.kgisl.bank.BankAccountTest@704a52ec]" name="beforeTest" is-config="true" duration-ms="7" started-at="2023-01-24T10:53:32 IST" finished-at="2023-01-24T10:53:32 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="test()[pri:0, instance:com.kgisl.bank.FixedDepositTest@59e5ddf]" name="test" duration-ms="7" started-at="2023-01-24T10:36:20 IST" finished-at="2023-01-24T10:36:20 IST">
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="negativeTest()[pri:0, instance:com.kgisl.bank.BankAccountTest@704a52ec]" name="negativeTest" duration-ms="17" started-at="2023-01-24T10:53:32 IST" finished-at="2023-01-24T10:53:32 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-      </class> <!-- com.kgisl.bank.FixedDepositTest -->
+        </test-method> <!-- negativeTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.kgisl.bank.BankAccountTest@704a52ec]" name="afterTest" is-config="true" duration-ms="1" started-at="2023-01-24T10:53:32 IST" finished-at="2023-01-24T10:53:32 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.kgisl.bank.BankAccountTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

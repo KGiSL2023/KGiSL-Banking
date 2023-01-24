@@ -34,7 +34,7 @@ public class BankAccount {
 				bankAccountVO.setAccBalance(bankAccountVO.getAccBalance() + depositeAmount);
 			}
 		} catch (Exception e) {
-			System.out.println("Something went wrong!");
+			System.out.println(e.getMessage());
 		}
 		return bankAccountVO;
 	}
@@ -65,7 +65,7 @@ public class BankAccount {
 				bankAccountVO.setAccBalance(bankAccountVO.getAccBalance() - withrawAmount);
 			
 		} catch (Exception e) {
-			System.out.println("Something went wrong!");
+			System.out.println(e.getMessage());
 		}
 		return bankAccountVO;
 	}
