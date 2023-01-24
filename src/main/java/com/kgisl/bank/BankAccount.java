@@ -1,6 +1,5 @@
 package com.kgisl.bank;
 
-import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -26,7 +25,7 @@ public class BankAccount {
 				if (bankAccountVO.getTransactions() != null) {
 					transactions = bankAccountVO.getTransactions();
 				} else {
-					transactions = new ArrayList<>();
+					transactions = new ArrayList<String>();
 				}
 
 				transaction = "Deposit $" + depositeAmount + " at " + currentDate.format(formatter);
@@ -52,7 +51,7 @@ public class BankAccount {
 			if (bankAccountVO.getTransactions() != null) 
 				transactions = bankAccountVO.getTransactions();
 			else
-				transactions = new ArrayList<>();
+				transactions = new ArrayList<String>();
 			
 			transaction = "Withdraw $" + withrawAmount + " at " + currentDate.format(formatter);
 			transactions.add(transaction);
@@ -71,13 +70,4 @@ public class BankAccount {
 		return bankAccountVO;
 	}
 	
-public static void gitTargetDirectory() {
-		
-	File fileDir = new File("/" + "target");
-	if (fileDir.exists()) {}
-	else {
-		fileDir.mkdir();
-	}
-		
-	}
 }
