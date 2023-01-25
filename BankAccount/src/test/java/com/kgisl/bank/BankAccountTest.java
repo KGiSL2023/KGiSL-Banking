@@ -23,6 +23,7 @@ public class BankAccountTest {
 		bankAccountVO.setAccStatus(true);
 		bankAccountVO = bankAccount.depositAmount(bankAccountVO, -1000);
 		bankAccountVO = bankAccount.withdrawAmount(bankAccountVO, 100);
+		System.out.println("End of Negative test case");
 	}
 
 	@BeforeTest
