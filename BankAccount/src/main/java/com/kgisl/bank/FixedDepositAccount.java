@@ -9,10 +9,9 @@ public class FixedDepositAccount{
 
 	private final float acct_balance;
 	private float interest = 3.0f;
-	private int duration_mths = 6;
+//	private int duration_mths = 6;
 	private boolean isInterestUpdated = false;
-	private boolean isDurationUpdatd = false; 
-	
+//	private boolean isDurationUpdatd = false; 
 	
 	public FixedDepositAccount(String acct_holder_name, float acct_balance) {
 		super();
@@ -41,10 +40,7 @@ public class FixedDepositAccount{
 		else {
 			throw new IllegalArgumentException("Interest rate cannot be changed to"+ interest+"%");
 		}
-		
 	}
-	
-	
 	
 	public float getBalance() {
 		float interest_amount = this.acct_balance * (this.interest/100);
@@ -58,9 +54,4 @@ public class FixedDepositAccount{
 	public String withdraw() {
 		return "No Operation";
 	}
-	
-	
-	
-	
-	
 }

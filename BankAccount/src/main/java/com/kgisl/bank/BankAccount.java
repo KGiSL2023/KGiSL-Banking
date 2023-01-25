@@ -16,17 +16,16 @@ public class BankAccount {
 
 			if (!bankAccountVO.isAccStatus())
 				throw new IllegalArgumentException("Account is closed!");
-			else if (depositeAmount < 0) 
+			else if (depositeAmount < 0)
 				throw new IllegalArgumentException("Entered amount is invalid!");
 			else {
 				currentDate = LocalDateTime.now();
 				formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
-				if (bankAccountVO.getTransactions() != null) {
+				if (bankAccountVO.getTransactions() != null)
 					transactions = bankAccountVO.getTransactions();
-				} else {
+				else
 					transactions = new ArrayList<String>();
-				}
 
 				transaction = "Deposit $" + depositeAmount + " at " + currentDate.format(formatter);
 				transactions.add(transaction);
@@ -34,7 +33,7 @@ public class BankAccount {
 				bankAccountVO.setAccBalance(bankAccountVO.getAccBalance() + depositeAmount);
 			}
 		} catch (Exception e) {
-			System.out.println("Something went wrong!");
+			System.out.println(e.getMessage());
 		}
 		return bankAccountVO;
 	}
@@ -45,29 +44,29 @@ public class BankAccount {
 		DateTimeFormatter formatter = null;
 		String transaction = null;
 		try {
-			currentDate = LocalDateTime.now();
-			formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-
-			if (bankAccountVO.getTransactions() != null) 
-				transactions = bankAccountVO.getTransactions();
-			else
-				transactions = new ArrayList<String>();
-			
-			transaction = "Withdraw $" + withrawAmount + " at " + currentDate.format(formatter);
-			transactions.add(transaction);
-			bankAccountVO.setTransactions(transactions);
 
 			if (!bankAccountVO.isAccStatus())
 				throw new IllegalArgumentException("Account is closed!");
-			else if (bankAccountVO.getAccBalance() - withrawAmount < 0) 
+			else if (bankAccountVO.getAccBalance() - withrawAmount < 0)
 				throw new IllegalArgumentException("Insufficiant balance!");
-		    else
+			else {
 				bankAccountVO.setAccBalance(bankAccountVO.getAccBalance() - withrawAmount);
-			
+				currentDate = LocalDateTime.now();
+				formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+				if (bankAccountVO.getTransactions() != null)
+					transactions = bankAccountVO.getTransactions();
+				else
+					transactions = new ArrayList<String>();
+
+				transaction = "Withdraw $" + withrawAmount + " at " + currentDate.format(formatter);
+				transactions.add(transaction);
+				bankAccountVO.setTransactions(transactions);
+			}
 		} catch (Exception e) {
-			System.out.println("Something went wrong!");
+			System.out.println(e.getMessage());
 		}
 		return bankAccountVO;
 	}
-	
+
 }

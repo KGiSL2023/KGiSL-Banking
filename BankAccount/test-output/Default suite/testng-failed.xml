@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.kgisl.bank.FixedDepositAccountTest">
+      <class name="com.kgisl.bank.BankAccountTest">
         <methods>
-          <include name="setUp"/>
+          <include name="beforeTest"/>
+          <include name="bankdeposite"/>
           <include name="afterTest"/>
-          <include name="fixedDepositTest"/>
         </methods>
-      </class> <!-- com.kgisl.bank.FixedDepositAccountTest -->
+      </class> <!-- com.kgisl.bank.BankAccountTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
